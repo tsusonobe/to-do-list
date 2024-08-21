@@ -1,7 +1,6 @@
 import { Reorder, useDragControls } from "framer-motion";
 import { DotsSixVertical, X } from "@phosphor-icons/react";
 import { useState } from "react";
-import checkedIcon from "../assets/checked.svg";
 
 export default function Item(props) {
 	const [isHoveringCheckIcon, setIsHoveringCheckIcon] = useState(false);
@@ -39,12 +38,12 @@ export default function Item(props) {
 				{isHoveringCheckIcon ? (
 					<img
 						className={`${props.item.status}-icon`}
-						src={checkedIcon}
+						src={`./to-do-list/src/img/${noStatus}.svg`}
 					/>
 				) : (
 					<img
 						className={`${props.item.status}-icon`}
-						src={`./to-do-list/src/assets/${props.item.status}.svg`}
+						src={`./to-do-list/src/img/${props.item.status}.svg`}
 					/>
 				)}
 			</span>
