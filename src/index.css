@@ -1,0 +1,268 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+:root {
+	--primary: #1a1a1a;
+	--secondary: #2b2b2b;
+	--tertiary: #424242;
+	--shadow: #00000034;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 1);
+	background-color: var(--primary);
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+section {
+	max-width: 1000px;
+	width: 100%;
+	height: 700px;
+	background-color: var(--secondary);
+	border-radius: 40px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+section h1 {
+	margin: 30px 30px 20px 50px;
+	font-size: 40px;
+	font-weight: 600;
+}
+
+section hr {
+	margin: 0 auto 20px auto;
+	width: 90%;
+	border-top: 2px;
+	border-radius: 2px;
+	border-color: var(--tertiary);
+	opacity: 0.7;
+}
+
+section nav {
+	width: 80%;
+	margin: 50px auto 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.statusBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-radius: 15px;
+	padding: 0 4px;
+	gap: 20px;
+}
+
+.unchecked-page,
+.checked-page {
+	padding: 10px 20px;
+	border-radius: 15px;
+
+	opacity: 0.3;
+	list-style: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+
+	transition: all 0.2s ease-out;
+}
+
+.unchecked-page:hover,
+.checked-page:hover {
+	opacity: 1;
+	transition: all 0.1s ease-in;
+}
+
+.selected-unchecked-page,
+.selected-checked-page {
+	padding: 10px 20px;
+	border-radius: 15px;
+
+	opacity: 1;
+	list-style: none;
+	cursor: pointer;
+	transform: scale(1.07);
+	background-color: var(--tertiary);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+
+	box-shadow: 2px 2px 4px var(--shadow);
+
+	transition: all 0.2s ease-in;
+}
+
+input {
+	width: 100%;
+	max-width: 864px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 20px 30px;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	background-color: var(--secondary);
+	box-shadow: 5px 5px 10px var(--shadow);
+	font-size: 16px;
+	font-weight: 300;
+
+	transition: all 0.2s ease-out;
+}
+
+input:focus {
+	background-color: var(--tertiary);
+	transition: all 0.2s ease-in;
+}
+
+.checked-group,
+.unchecked-group {
+	max-width: 840px;
+	max-height: 350px;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto 30px auto;
+	border-radius: 15px;
+
+	list-style: none;
+	font-size: 18px;
+	font-weight: 300;
+
+	overflow-y: scroll;
+	user-select: none;
+}
+
+.checked-group::-webkit-scrollbar,
+.unchecked-group::-webkit-scrollbar {
+	display: none;
+}
+
+.checked-item,
+.unchecked-item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	gap: 20px;
+	width: 90%;
+	padding: 6px 8px;
+	border-radius: 15px;
+	margin: 6px;
+}
+
+.checked-item:hover,
+.unchecked-item:hover {
+	background-color: var(--tertiary);
+	box-shadow: 3px 3px 6px var(--shadow);
+}
+
+.x {
+	cursor: pointer;
+	opacity: 0;
+}
+
+.drag-icon {
+	opacity: 0;
+}
+
+li:hover .x,
+li:hover .drag-icon {
+	opacity: 1;
+}
+
+span.check-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.unchecked-icon {
+	opacity: 1;
+}
+
+.checked-icon {
+	opacity: 0.3;
+}
+
+span.drag-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: grab;
+	margin-left: 5px;
+}
+
+span.delete-icon {
+	margin: 0 10px 0 auto;
+	cursor: pointer;
+	border-radius: 15px;
+	padding: 12px 12px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+span.delete-icon:hover {
+	background-color: var(--secondary);
+	box-shadow: 1px 1px 3px var(--shadow);
+}
+
+.unchecked {
+	text-decoration: none;
+	opacity: 1;
+}
+
+.checked {
+	text-decoration: line-through;
+	opacity: 0.3;
+}
+
+.empty-message {
+	margin-top: 50px;
+}
+
+
+/* transitions and animations */
+
+@keyframes clickButton {
+	from {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.12);
+	}
+	to {
+		transform: scale(1.07);
+	}
+}
