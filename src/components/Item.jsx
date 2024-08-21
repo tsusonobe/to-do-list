@@ -38,12 +38,12 @@ export default function Item(props) {
 				{isHoveringCheckIcon ? (
 					<img
 						className={`${props.item.status}-icon`}
-						src={`./to-do-list/src/img/${noStatus}.svg`}
+						src={`./to-do-list/src/assets/${noStatus}.svg`}
 					/>
 				) : (
 					<img
 						className={`${props.item.status}-icon`}
-						src={`./to-do-list/src/img/${props.item.status}.svg`}
+						src={`./to-do-list/src/assets/${props.item.status}.svg`}
 					/>
 				)}
 			</span>
