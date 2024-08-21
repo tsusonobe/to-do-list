@@ -88,14 +88,17 @@ export default function App() {
 		if (!localItemsUnchecked && !localItemsChecked) {
 			setItems([
 				{
+					id: 1,
 					text: "Criar funcionalidade x no sistema",
 					status: "unchecked",
 				},
 				{
+					id: 2,
 					text: "Ir pra academia",
 					status: "unchecked",
 				},
 				{
+					id: 3,
 					text: "Estudar React",
 					status: "unchecked",
 				},
